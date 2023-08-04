@@ -9,7 +9,7 @@
 <body>
 <?php
 setcookie("request_form", FALSE);
-echo "<meta http-equiv='refresh'  content='2;URL=index1.php'>";
+echo "<meta http-equiv='refresh'  content='2;URL=index.php'>";
 ?>
 <script>
 Swal.fire({

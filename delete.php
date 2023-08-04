@@ -27,7 +27,7 @@
 		$sql="UPDATE `request_form` SET `status` = '3' WHERE id = '$id_select'";
 			mysql_query($sql) or die ("ไม่สามารถเพิ่มข้อมูลได้");
 			// echo "ลบข้อมูลเรียบร้อย";
-            echo "<meta http-equiv='refresh'  content='2;URL=admin1.php'>";
+            echo "<meta http-equiv='refresh'  content='2;URL=admin.php'>";
 			mysql_close();
 		?>
         <!-- </div>

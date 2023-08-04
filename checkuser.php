@@ -14,7 +14,7 @@ session_start();
 ob_start();
 
 if ($_POST[psd] == ""){
-	echo "<meta http-equiv='refresh' content='2;url=admin1.php'>";	
+	echo "<meta http-equiv='refresh' content='2;url=admin.php'>";	
 ?>
 <script>
 	Swal.fire({
@@ -34,7 +34,7 @@ if($_POST['psd']=="2432"){
     $limitTime=time()+60*60;
     setcookie("request_form",$names,$limitTime);
     echo $_COOKIE[request_form];
-    echo "<meta http-equiv='refresh' content='2;url=admin1.php'>";	?>
+    echo "<meta http-equiv='refresh' content='2;url=admin.php'>";	?>
     <script>
 	Swal.fire({
   	position: 'center',
@@ -48,7 +48,7 @@ if($_POST['psd']=="2432"){
     ob_end_flush();
 
 }else{
-    echo "<meta http-equiv='refresh' content='2;url=admin1.php'>";	
+    echo "<meta http-equiv='refresh' content='2;url=admin.php'>";	
     ?>
 <script>
 	Swal.fire({

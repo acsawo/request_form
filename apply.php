@@ -41,7 +41,7 @@ if ($status == 1){
 			</footer>
 		</div> -->
 <?php
-	    echo "<meta http-equiv='refresh'  content='2;URL=admin1.php'>";
+	    echo "<meta http-equiv='refresh'  content='2;URL=admin.php'>";
 
 
 			mysql_close();
@@ -77,7 +77,7 @@ if ($status == 1){
 			</footer>
 		</div> -->
 <?php
-	    echo "<meta http-equiv='refresh'  content='2;URL=admin1.php'>";
+	    echo "<meta http-equiv='refresh'  content='2;URL=admin.php'>";
 			mysql_close();
 			?>	
 <script>

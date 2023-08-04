@@ -44,7 +44,7 @@ include('func.php');
         <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
     </header>
     <section> 
-    <form name="form1" method="post" action="inseart_data1.php">
+    <form name="form1" method="post" action="inseart_data.php">
         <div class="body-form">
         <input type="hidden" name="user" value="1">
           <div class="w100">

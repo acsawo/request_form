@@ -1,75 +1,64 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</title>
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="js/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="js/gijgo.min.js" type="text/javascript"></script>
-    <link href="js/gijgo.min.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-body,table{
-font-family : tahoma,Verdana ;
-font-size : 14 px;
-}
-</style>
-<?php
-		include('func.php');
-		include('connect.inc.php');
-		//$sql = "select * from telnew where (department like '%$_POST[search]%') or (inner_line like '%$_POST[search]%')" ; ตัวอย่าง
-		//$sql = "select * from publish_form where (username like '%$_POST[search]%') or (department like '%$_POST[search]%') or (ipaddress like '%$_POST[search]%')" ;		
-		$sql = "SELECT * FROM request_form WHERE status = 1 or status = 2 ORDER BY id DESC " ;		
-		$result = mysql_query($sql) or die ("ไม่สามารถ query คำสั่งได้ครับ") ;
-	?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;0,700;1,600;1,700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;0,700;1,600;1,700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
 <div class="container">
-<pre><h3> <img src="img/logo.jpg" class="img-polaroid width="80">&nbsp;&nbsp;&nbsp;แบบฟอร์มขอข้อมูลสถิติ จากระบบโรงพยาบาล</h3></pre>
-<div align="center">
-<a href="form.php" class="btn btn-lg btn-primary" role="button" aria-pressed="true">แจ้งขอข้อมูล</a> <a href="admin.php" class="btn btn-lg btn-info" role="button" aria-pressed="true">admin</a>
-  <table width="800" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td><br>
-    </tr>
-        <tr>
-      <td><div align="center">
-        <table class="table table-hover" width="800" border="1" cellspacing="0" cellpadding="0">
-		<thead>
-          <tr bgcolor="#CCCCCC">
-		    <td scope="col" width="50"><div align="center">ลำดับ</div></td>
-            <td scope="col" width="150"><div align="center">วันที่</div></td>
-            <td scope="col" width="250"><div align="center">ลักษณะปัญหาหรือความต้องการ</div></td>
-			<td scope="col" width="250"><div align="center">ผู้ข้อ</div></td>
-			<td scope="col"width="150"><div align="center">หมายเลขติดต่อ</div></td>
-			<td scope="col" width="200"><div align="center">สถานะ</div></td>
-          </tr>
-		  </thead>
-          <?php while($dbarr = mysql_fetch_array($result)) {
-				$id = $dbarr['id'] ;
-				$date = $dbarr['date'];
-				$case = $dbarr['case'] ;
-				$department = $dbarr['department'] ;
-				$name = $dbarr['name'] ;
-				$tel = $dbarr['tel'] ;
-				$status = $dbarr['status'] ;?>
-          <tr>
+    <header>
+        <div class="logo"><img src="img/logo.jpg" alt=""></div>
+        <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
+        <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
+    </header>
+    <nav><a href="form.php"><button class="SteelBlue">แจ้งขอข้อมูล</button></a> <a href="admin.php"><button class="seagreen">Admin</button></a> </nav>
+    <section>
+        <div class="body-table">
+        <?php
+        include('func.php');
+        include('connect.inc.php');        
+            $sql = "SELECT * FROM request_form WHERE status = 1 or status = 2 ORDER BY id DESC " ;		
+            $result = mysql_query($sql) or die ("ไม่สามารถ query คำสั่งได้ครับ") ; ?>
 
-            <td><div align="center"><?php echo "<a href='detail.php?id_select=$id'>$id</a>"; ?></div></td>
-		    <td><div align="center"><?php echo "<a href='detail.php?id_select=$id'>$date</a>"; ?></div></td>
-            <td><div align="center"><?php echo "<a href='detail.php?id_select=$id'>$case</a>"; ?></div></td>
-			<td><div align="center"><?php echo "<a href='detail.php?id_select=$id'>$name</a>"; ?></div></td>
-            <td><div align="center"><?php echo "<a href='detail.php?id_select=$id'>$tel</a>"; ?></div></td>
-			<td bgcolor="<?php if($status==1){echo 'red';}else{echo 'green';}?>"> <div align="center"><?php echo get_status($status); ?></div></td>
-		  </tr>
-          <?php } ?>
-        </table>
-      </div>
-    </tr>
-  </table>
- </div>
- </div>
+                <table class="table-list">
+                        <tr>
+		                    <th width="50"><div class="text-center">ลำดับ</div></th>
+		                    <th width="150"><div class="text-center">วันที่</div></th>
+		                    <th width="250"><div class="text-center">ลักษณะปัญหาหรือความต้องการ</div></th>
+		                    <th width="250"><div class="text-center">ผู้แจ้ง</div></th>
+		                    <th width="150"><div class="text-center">หมายเลขติดต่อ</div></th>
+		                    <th width="200"><div class="text-center">สถานะ</div></th>
+		                </tr>
+                        <?php while($dbarr = mysql_fetch_array($result)) {
+				        $id = $dbarr['id'] ;
+				        $date = $dbarr['date'];
+				        $case = $dbarr['case'] ;
+				        $department = $dbarr['department'] ;
+				        $name = $dbarr['name'] ;
+				        $tel = $dbarr['tel'] ;
+				        $status = $dbarr['status'] ;?>
+                        <tr>
+                            <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$id</a>"; ?></div></td>
+		                    <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$date</a>"; ?></div></td>
+                            <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$case</a>"; ?></div></td>
+			                <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$name</a>"; ?></div></td>
+                            <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$tel</a>"; ?></div></td>
+                            <td><div class="text-center <?php if($status==1){echo 'red';}elseif($status==2){echo 'green';}else{echo 'gray';}?>"><?php echo get_status($status); ?></div></td>
+		                </tr>
+                        <?php } ?>
+                </table>
+        </div>
+        </section>
+    <footer>
+        <p>&copy; Copyright by Computer Center Lerdsin Hospital.</p> 
+    </footer>
+</div>
 </body>
 </html>
-
-
