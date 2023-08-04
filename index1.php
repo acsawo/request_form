@@ -16,22 +16,9 @@
     <header>
         <div class="logo"><img src="img/logo.jpg" alt=""></div>
         <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
-        <div class="berger">
-             <input type="checkbox" class="toggler">
-             <div class="hamburger"><div></div></div>
-             <div class="menu">
-        <div>
-            <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>About</a></li>
-                <li><a href='#'>Services</a></li>
-                <li><a href='#'>Contact</a></li>
-            </ul>
-        </div>
-    </div>
-        </div>
+        <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
     </header>
-    <nav><a href="form.php"><button class="SteelBlue">แจ้งขอข้อมูล</button></a> <a href="admin1.php"><button class="seagreen">Admin</button></a> </nav>
+    <nav><a href="form1.php"><button class="SteelBlue">แจ้งขอข้อมูล</button></a> <a href="admin1.php"><button class="seagreen">Admin</button></a> </nav>
     <section>
         <div class="body-table">
         <?php

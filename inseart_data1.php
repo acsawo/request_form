@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php 
+$user = $_POST['user'];
 $date = $_POST['date'];
 $case = $_POST['case'];
 $department = $_POST['department'];
@@ -41,7 +42,11 @@ include("connect.inc.php");
 			  timer: 2000
 		})
 		</script><?php
-	    echo "<meta http-equiv='refresh'  content='1;URL=index1.php'>";
+		if($user ==1){
+			echo "<meta http-equiv='refresh'  content='1;URL=admin1.php'>";
+		}else{
+			echo "<meta http-equiv='refresh'  content='1;URL=index1.php'>";
+		}
 		echo "</center>";
 			echo "</div>";
 			mysql_close();

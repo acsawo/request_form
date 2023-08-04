@@ -32,12 +32,12 @@
                 <table class="table-list">
                         <tr>
 		                    <th width="50"><div class="text-center">ลำดับ</div></th>
-		                    <th width="150"><div class="text-center">วันที่</div></th>
+		                    <th width="100"><div class="text-center">วันที่</div></th>
 		                    <th width="200"><div class="text-center">ลักษณะปัญหาหรือความต้องการ</div></th>
 		                    <th width="250"><div class="text-center">ผู้แจ้ง</div></th>
-		                    <th width="150"><div class="text-center">หมายเลขติดต่อ</div></th>
+		                    <th width="100"><div class="text-center">หมายเลขติดต่อ</div></th>
 		                    <th width="200"><div class="text-center">สถานะ</div></th>
-		                    <th width="250"><div class="text-center">ปรับสถานะ</div></th>
+		                    <th width="350"><div class="text-center">ปรับสถานะ</div></th>
 		                </tr>
                         <?php while($dbarr = mysql_fetch_array($result)) {
 				        $id = $dbarr['id'] ;
@@ -56,7 +56,10 @@
                             <td><div class="text-center <?php if($status==1){echo 'red';}elseif($status==2){echo 'green';}else{echo 'gray';}?>"><?php echo get_status($status); ?></div></td>
 			                <td><div class="text-center">
                                 <a href='apply.php?id_select=<?php echo $id?>'><button class='<?php if($status ==1){echo 'green';} else { echo 'red'; } ?>'><i class='fas fa-sync-alt fa-spin'></i> apply</button></a> 
-                                <a href='delete.php?id_select=<?php echo $id?>'><button class='SteelBlue'><i class='fas fa-trash-alt' style='font-size:16px'></i> ลบ</button></a></div></td>
+                                <a href='edit.php?id_select=<?php echo $id?>'><button class='khaki'><i class='fas fa-edit' style='font-size:16px'></i> แก้ไข</button></a>
+                                <a href='delete.php?id_select=<?php echo $id?>'><button class='SteelBlue'><i class='fas fa-trash-alt' style='font-size:16px'></i> ลบ</button></a>
+                                </div>
+                            </td>
 		                </tr>
                         <?php } ?>
                 </table>
@@ -72,7 +75,7 @@
                     ?>
 <div class="container">
     <header>
-        <div class="logo"><img src="img/logo.jpg" alt=""></div>
+        <div class="logo"><img src="img/logo.jpg" alt="logo"></div>
         <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
         <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
     </header>
@@ -89,12 +92,6 @@
        <p>&copy; Copyright by Computer Center Lerdsin Hospital.</p> 
     </footer>
 </div>
-
-
-
-
-
-
         <?php } ?>
 
 </body>

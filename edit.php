@@ -17,7 +17,26 @@
   } );
   </script>
 </head>
-<body>
+<body><?php
+$id_select = $_GET['id_select'];
+include('func.php');
+		include('connect.inc.php');
+		$sql = "select * from `request_form` where id = '$id_select' " ;		
+		$result = mysql_query($sql) or die ("ไม่สามารถ query คำสั่งได้ครับ") ;
+		
+		        while($dbarr = mysql_fetch_array($result)) {
+				$id = $dbarr['id'] ;
+				$date = $dbarr['date'];
+				$case = $dbarr['case'] ;
+				$department = $dbarr['department'] ;
+				$tel = $dbarr['tel'] ;
+				$name = $dbarr['name'] ;
+				$way = $dbarr['way'] ;
+				$specify = $dbarr['specify'] ;
+				$detail = $dbarr['detail'] ;
+				$status = $dbarr['status'] ;
+				?>
+				  <?php }?>
 <div class="container">
     <header>
         <div class="logo"><img src="img/logo.jpg" alt=""></div>
@@ -27,10 +46,10 @@
     <section> 
     <form name="form1" method="post" action="inseart_data1.php">
         <div class="body-form">
-        <input type="hidden" name="user" value="0">
+        <input type="hidden" name="user" value="1">
           <div class="w100">
               <div class="w20 right">วันที่</div>
-              <div class="w80"><input type="text" id="datepicker" placeholder="วันที่" name="date" autocomplete="off" required></div>
+              <div class="w80"><input type="text" id="datepicker" value="<?php echo $date; ?>" name="date" autocomplete="off" required ></div>
           </div>
           <div class="w100">
               <div class="w20 right">ลักษะของปัญหาหรือความต้องการ <span class="font-red">*</span></div>
@@ -43,33 +62,33 @@
           </div>
           <div class="w100">
               <div class="w20 right">หน่วยงาน/แผนก <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form" name="department" required></div>
+              <div class="w80"><input type="text" id="input-form" name="department" value="<?php echo $department; ?>" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">หมายเลขติดต่อกลับ <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form" name="tel" required></div>
+              <div class="w80"><input type="text" id="input-form" name="tel" value="<?php echo $tel; ?>" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">รายละเอียด <span class="font-red">*</span></div>
               <div class="w80">
-              <textarea name="detail" rows="4" cols="50" required></textarea>
+              <textarea name="detail" rows="4" cols="50" required><?php echo $detail; ?></textarea>
           </div>
           </div>
           <div class="w100">
               <div class="w20 right">ผู้ขอข้อมูล <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form" name="name" required></div>
+              <div class="w80"><input type="text" id="input-form" name="name" value="<?php echo $name; ?>" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">ช่องทางส่งผลการดำนเนินการ</div>
-              <div class="w80"><input type="text" id="input-form" name="way"></div>
+              <div class="w80"><input type="text" id="input-form" name="way" value="<?php echo $way; ?>"></div>
           </div>
           <div class="w100">
               <div class="w20 right">ชื่อบัญชี</div>
-              <div class="w80"><input type="text" id="input-form" name="specify"></div>
+              <div class="w80"><input type="text" id="input-form" name="specify" value="<?php echo $specify; ?>"></div>
           </div>
           <div class="w100">
               <div class="w20 right"></div>
-              <div class="w80"><input type="reset" value="รีเซ้ต" ><input type="submit" value="บันทึก"></div>
+              <div class="w80"><input type="submit" value="บันทึก"></div>
           </div>
 
         </div>
