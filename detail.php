@@ -61,6 +61,13 @@ float:right;
   border: 2px solid pink;
   height: 270mm;  
 }
+
+#detail{
+    background-color:WhiteSmoke;
+    border-radius:4px;
+    border:1px solid Silver;
+    padding:0 20px 0 20px;
+}
 @page {
   size: A4;
   margin: 0;
@@ -112,7 +119,7 @@ $id_select = $_GET['id_select'];
 		<div class="left"><h4><b>ลักษณะของปัญหาหรือความต้องการ</b></h4></div>
 		<div class="letf"><h4>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<u><?php echo "$case"; ?></u></h4></div><hr>
 		<div class="left"><h4><b>บันทึกรายละเอียดปัญหาหรือความต้องการ</b></h4></div>
-		<div class="left"><h4><u><?php echo nl2br ("$detail"); ?></h4></u></div><br><br>
+		<div id="detail" class="left" ><h4><?php echo nl2br ("$detail"); ?></h4></div><br><br>
 		<div class="left"><h4>ช่องทางส่งผลการดำเนินงาน&nbsp;&nbsp;<u><?php echo "$way"; ?></h4></u></div>
 		<div class="left"><h4><u><?php echo "$specify"; ?></u></h4></div><br><br>
 		<div class="right"><h4>ผู้แจ้งเรื่อง&nbsp;&nbsp;&nbsp;<u><?php echo "$name"; ?></h4></u></div><br>

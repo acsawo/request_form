@@ -24,16 +24,17 @@
         <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
         <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
     </header>
-    <section>
+    <section> 
+    <form name="form1" method="post" action="inseart_data1.php">
         <div class="body-form">
           <div class="w100">
               <div class="w20 right">วันที่</div>
-              <div class="w80"><input type="text" id="datepicker"></div>
+              <div class="w80"><input type="text" id="datepicker" placeholder="วันที่" name="date" autocomplete="off" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">ลักษะของปัญหาหรือความต้องการ <span class="font-red">*</span></div>
               <div class="w80"> 
-                <select id="country" name="country">
+                <select id="country" name="case">
                   <option value="ขอสถิติข้อมูล">ขอสถิติข้อมูล</option>
                   <option value="อื่นๆ">อื่นๆ</option>
                 </select>
@@ -41,30 +42,29 @@
           </div>
           <div class="w100">
               <div class="w20 right">หน่วยงาน/แผนก <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form"></div>
+              <div class="w80"><input type="text" id="input-form" name="department" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">หมายเลขติดต่อกลับ <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form"></div>
+              <div class="w80"><input type="text" id="input-form" name="tel" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">รายละเอียด <span class="font-red">*</span></div>
               <div class="w80">
-                <textarea name="" rows="4" cols="50">
-                </textarea>
+              <textarea name="detail" rows="4" cols="50" required></textarea>
           </div>
           </div>
           <div class="w100">
               <div class="w20 right">ผู้ขอข้อมูล <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form"></div>
+              <div class="w80"><input type="text" id="input-form" name="name" required></div>
           </div>
           <div class="w100">
               <div class="w20 right">ช่องทางส่งผลการดำนเนินการ</div>
-              <div class="w80"><input type="text" id="input-form"></div>
+              <div class="w80"><input type="text" id="input-form" name="way"></div>
           </div>
           <div class="w100">
               <div class="w20 right">ชื่อบัญชี</div>
-              <div class="w80"><input type="text" id="input-form"></div>
+              <div class="w80"><input type="text" id="input-form" name="specify"></div>
           </div>
           <div class="w100">
               <div class="w20 right"></div>
@@ -72,6 +72,7 @@
           </div>
 
         </div>
+        </form>
     </section>
     <footer>
        <p>&copy; Copyright by Computer Center Lerdsin Hospital.</p> 
