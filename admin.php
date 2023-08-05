@@ -1,3 +1,9 @@
+<?php 
+session_start();
+ob_start();
+error_reporting (E_ALL ^ E_NOTICE);
+error_reporting(0); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
