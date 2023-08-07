@@ -95,19 +95,33 @@ section{
 .body-form{
     padding:20px;
 }
+.w10{
+    width:10%;
+}
 .w20{
     width:20%;
-    padding: 10px;
 }
 .w80{
     width:80%;
-    padding: 10px;
-
 }
+.w60{
+    width:60%;
+}
+.w90{
+    width:90%;
+}   
 .w100{
     width:100%;
-    display: flex;
+}   
+.padding10{
+    padding: 10px;
 }
+.dflex{
+    display: flex;
+}  
+.dtable{
+    display: table;
+}                                                                                          
 
 #input-form{
     width:80%;
@@ -123,7 +137,7 @@ section{
     box-shadow: 0px 0px 3px 1px #c8def0;
   }
 #datepicker{
-    width:30%;
+    width:20%;
     border-radius: 5px;
     background: #fff;
     border: 1px solid #ccc;

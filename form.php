@@ -28,9 +28,9 @@
     <form name="form1" method="post" action="inseart_data.php">
         <div class="body-form">
         <input type="hidden" name="user" value="0">
-          <div class="w100  dflex">
+          <div class="w100 dflex">
               <div class="w20 padding10 right">วันที่</div>
-              <div class="w80 padding10"><input type="text" id="datepicker" placeholder="วันที่" name="date" autocomplete="off" required></div>
+              <div class="w80 padding10"><input type="text" id="datepicker" placeholder="เลือกวันที่" name="date" autocomplete="off" required></div>
           </div>
           <div class="w100 dflex">
               <div class="w20 padding10 right">ลักษะของปัญหาหรือความต้องการ <span class="font-red">*</span></div>
@@ -75,7 +75,7 @@
               <div class="w80 padding10">
                 <div class="w100 dtable">
                   <div class="w10 right" style="display:table-cell;vertical-align middle;">ชื่อบัญชี : </div>
-                  <div class="w60"> <input type="text" id="input-form" name="specify" placeholder="email line หรือ ชื่อเครื่องคอม" autocomplete="off"></div>
+                  <div class="w90"> <input type="text" id="input-form" name="specify" placeholder="email line หรือ ชื่อเครื่องคอม" autocomplete="off"></div>
                 </div>
               </div>
           </div>
