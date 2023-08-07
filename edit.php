@@ -44,9 +44,10 @@ include('func.php');
         <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
     </header>
     <section> 
-    <form name="form1" method="post" action="inseart_data.php">
+    <form name="form1" method="post" action="update_data.php">
         <div class="body-form">
         <input type="hidden" name="user" value="1">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
           <div class="w100 dflex">
               <div class="w20 padding10 right">วันที่</div>
               <div class="w80 padding10"><input type="text" id="datepicker" value="<?php echo $date; ?>" name="date" autocomplete="off" required ></div>
