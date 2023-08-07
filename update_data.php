@@ -21,9 +21,9 @@ $specify = $_POST['specify'];
 $date_time= date("dmYhi");
 $status = "1";
 $ipaddress = $_SERVER['REMOTE_ADDR'];
-echo $id;
-echo $date;
-echo $case;
+// echo $id;
+// echo $date;
+// echo $case;
 
 if(($_POST['date']=="")||($_POST['case']=="")||($_POST['department']=="")||($_POST['tel']=="")||($_POST['detail']=="")||($_POST['name']=="")){
 	echo "กรุณากรอกข้อมูลตามเครื่องหมายดอกจันสีแดง "."<font color='red'>*</font>"."ให้ครบถ้วน";
