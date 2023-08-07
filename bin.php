@@ -20,7 +20,7 @@
         <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
         <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
     </header>
-    <nav><a href="admin1.php"><button class="SteelBlue"><i class='fa fa-database' style="font-size:16px"></i> หน้าขอข้อมูล</button></a> <a href="logout.php"><button class="seagreen"><i class='fa fa-sign-out' style="font-size:20px"></i> ออกจากระบบ</button></a></nav>
+    <nav><a href="admin.php"><button class="SteelBlue"><i class='fa fa-database' style="font-size:16px"></i> หน้าขอข้อมูล</button></a> <a href="logout.php"><button class="seagreen"><i class='fa fa-sign-out' style="font-size:20px"></i> ออกจากระบบ</button></a></nav>
     <section>
         <div class="body-table">
         <?php
