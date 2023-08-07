@@ -47,48 +47,60 @@ include('func.php');
     <form name="form1" method="post" action="inseart_data.php">
         <div class="body-form">
         <input type="hidden" name="user" value="1">
-          <div class="w100">
-              <div class="w20 right">วันที่</div>
-              <div class="w80"><input type="text" id="datepicker" value="<?php echo $date; ?>" name="date" autocomplete="off" required ></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">วันที่</div>
+              <div class="w80 padding10"><input type="text" id="datepicker" value="<?php echo $date; ?>" name="date" autocomplete="off" required ></div>
           </div>
-          <div class="w100">
-              <div class="w20 right">ลักษะของปัญหาหรือความต้องการ <span class="font-red">*</span></div>
-              <div class="w80"> 
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">ลักษะของปัญหาหรือความต้องการ <span class="font-red">*</span></div>
+              <div class="w80 padding10"> 
                 <select id="country" name="case">
                   <option value="ขอสถิติข้อมูล">ขอสถิติข้อมูล</option>
                   <option value="อื่นๆ">อื่นๆ</option>
                 </select>
           </div>
           </div>
-          <div class="w100">
-              <div class="w20 right">หน่วยงาน/แผนก <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form" name="department" value="<?php echo $department; ?>" required></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">หน่วยงาน/แผนก <span class="font-red">*</span></div>
+              <div class="w80 padding10"><input type="text" id="input-form" name="department" value="<?php echo $department; ?>" required></div>
           </div>
-          <div class="w100">
-              <div class="w20 right">หมายเลขติดต่อกลับ <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form" name="tel" value="<?php echo $tel; ?>" required></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">หมายเลขติดต่อกลับ <span class="font-red">*</span></div>
+              <div class="w80 padding10"><input type="text" id="input-form" name="tel" value="<?php echo $tel; ?>" required></div>
           </div>
-          <div class="w100">
-              <div class="w20 right">รายละเอียด <span class="font-red">*</span></div>
-              <div class="w80">
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">รายละเอียด <span class="font-red">*</span></div>
+              <div class="w80 padding10">
               <textarea name="detail" rows="4" cols="50" required><?php echo $detail; ?></textarea>
           </div>
           </div>
-          <div class="w100">
-              <div class="w20 right">ผู้ขอข้อมูล <span class="font-red">*</span></div>
-              <div class="w80"><input type="text" id="input-form" name="name" value="<?php echo $name; ?>" required></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">ผู้ขอข้อมูล <span class="font-red">*</span></div>
+              <div class="w80 padding10"><input type="text" id="input-form" name="name" value="<?php echo $name; ?>" required></div>
           </div>
-          <div class="w100">
-              <div class="w20 right">ช่องทางส่งผลการดำนเนินการ</div>
-              <div class="w80"><input type="text" id="input-form" name="way" value="<?php echo $way; ?>"></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10 right">ช่องทางส่งผลการดำนเนินการ</div>
+              <div class="w80 padding10"> 
+                <select class="form-control" name="way">
+		              <option>email</option>
+                  <option>line</option>
+		              <option>เครื่องคอมพิวเตอร์ในระบบ รพ.</option>
+		              <option>อื่นๆ</option>
+	              </select>
+              </div>
           </div>
-          <div class="w100">
-              <div class="w20 right">ชื่อบัญชี</div>
-              <div class="w80"><input type="text" id="input-form" name="specify" value="<?php echo $specify; ?>"></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10"></div>
+              <div class="w80 padding10">
+                <div class="w100 dtable">
+                  <div class="w10 right" style="display:table-cell;vertical-align middle;">ชื่อบัญชี : </div>
+                  <div class="w90"> <input type="text" id="input-form" name="specify" value="<?php echo $specify; ?>"></div>
+                </div>
+              </div>
           </div>
-          <div class="w100">
-              <div class="w20 right"></div>
-              <div class="w80"><input type="submit" value="บันทึก"></div>
+          <div class="w100 dflex">
+              <div class="w20 padding10 right"></div>
+              <div class="w80 padding10"><input type="submit" value="บันทึก"></div>
           </div>
 
         </div>

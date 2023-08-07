@@ -17,8 +17,10 @@ error_reporting(0);
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">    
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0b2ccb2a27.js" crossorigin="anonymous"></script>
 </head>
-<body>             
+<body>  
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top <i class="fa-solid fa-arrow-up-long"></i></button>           
 <?php if (isset($_COOKIE["request_form"])) { ?>
 <div class="container">
     <header>
@@ -99,6 +101,26 @@ error_reporting(0);
     </footer>
 </div>
         <?php } ?>
+        <script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 </body>
 </html>
