@@ -33,10 +33,11 @@
                         <tr>
 		                    <th width="50"><div class="text-center">ลำดับ</div></th>
 		                    <th width="150"><div class="text-center">วันที่</div></th>
-		                    <th width="250"><div class="text-center">ลักษณะปัญหาหรือความต้องการ</div></th>
+		                    <th width="150"><div class="text-center">ลักษณะปัญหาหรือความต้องการ</div></th>
 		                    <th width="250"><div class="text-center">ผู้แจ้ง</div></th>
 		                    <th width="150"><div class="text-center">หมายเลขติดต่อ</div></th>
 		                    <th width="200"><div class="text-center">สถานะ</div></th>
+                        <th width="100"><div class="text-center">แก้ไข</div></th>
 		                </tr>
                         <?php while($dbarr = mysql_fetch_array($result)) {
 				        $id = $dbarr['id'] ;
@@ -53,6 +54,7 @@
 			                <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$name</a>"; ?></div></td>
                             <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$tel</a>"; ?></div></td>
                             <td><div class="text-center <?php if($status==1){echo 'red';}elseif($status==2){echo 'green';}else{echo 'gray';}?>"><?php echo get_status($status); ?></div></td>
+                            <td><div class="text-center"> <a href='edit.php?id_select=<?php echo $id?>'><button class='khaki'><i class='fas fa-edit' style='font-size:16px'></i> แก้ไข</button></a></div></td>
 		                </tr>
                         <?php } ?>
                 </table>
