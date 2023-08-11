@@ -54,7 +54,7 @@
 			                <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$name</a>"; ?></div></td>
                             <td><div class="text-center"><?php echo "<a href='detail.php?id_select=$id'>$tel</a>"; ?></div></td>
                             <td><div class="text-center <?php if($status==1){echo 'red';}elseif($status==2){echo 'green';}else{echo 'gray';}?>"><?php echo get_status($status); ?></div></td>
-                            <td><div class="text-center"> <a href='edit.php?id_select=<?php echo $id?>'><button class='khaki'><i class='fas fa-edit' style='font-size:16px'></i> แก้ไข</button></a></div></td>
+                            <td><div class="text-center"> <a href='checkuser.php?id_select=<?php echo $id?>'><button class='khaki'><i class='fas fa-edit' style='font-size:16px'></i> แก้ไข</button></a></div></td>
 		                </tr>
                         <?php } ?>
                 </table>

@@ -191,7 +191,7 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
 }
-input[type=reset] {
+input[type=reset],input[type=button] {
     background-color: transparent;
     border: 1px solid salmon;
     color: salmon;
@@ -201,7 +201,7 @@ input[type=reset] {
     cursor: pointer;
     border-radius: 5px;
 }
-input[type=reset]:hover {
+input[type=reset],input[type=button]:hover {
     background-color: MistyRose;
     border: 1px solid salmon;
     color: black;

@@ -20,11 +20,7 @@
             $_SESSION[ses_userid] = session_id();
             $_SESSION[ses_user] = $user;
             $_SESSION[login_time_stamp] = time();
-            // echo "ses userid :".$_SESSION[ses_userid]."<br>";
-            // echo "ses user  :".$_SESSION[ses_user];
-            echo "ses login tiem stamp  :".$_SESSION[login_time_stamp];
-
-            echo "<meta http-equiv ='refresh' content = '1; URL = adminindex.php' />";    
+            // echo "<meta http-equiv ='refresh' content = '1; URL = adminindex.php' />";    
         }
     ?>
 </body>

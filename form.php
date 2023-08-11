@@ -80,6 +80,10 @@
               </div>
           </div>
           <div class="w100 dflex">
+              <div class="w20 padding10 right">Passcode <span class="font-red">*</span></div>
+              <div class="w80 padding10"><input type="text" id="input-form" name="passcode" maxlength="4" placeholder="ตั้งตัวเลข 4 หลักสำหรับแก้ไข้ข้อมูลภายหลัง" autocomplete="off" required></div>
+          </div>
+          <div class="w100 dflex">
               <div class="w20 padding10 right"></div>
               <div class="w80 padding10"><input type="reset" value="รีเซ้ต" ><input type="submit" value="บันทึก"></div>
           </div>

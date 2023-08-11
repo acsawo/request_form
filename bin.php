@@ -1,3 +1,9 @@
+<?php 
+session_start();
+ob_start();
+error_reporting (E_ALL ^ E_NOTICE);
+error_reporting(0); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +19,44 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>             
-<?php if (isset($_COOKIE["request_form"])) { ?>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top <i class="fa-solid fa-arrow-up-long"></i></button>           
+    <?php
+        $ses_userid = $_SESSION[ses_userid];
+        $ses_user = $_SESSION[ses_user];
+        $ses_login_time_stamp = $_SESSION[login_time_stamp];
+        $ses_limit_time = $_SESSION[limit_time];
+        $ses_diff_time = (time() - $ses_login_time_stamp);
+
+
+        if(($ses_userid <> SESSION_id())||($ses_user == ""))
+        {?>
+            <div class="container">
+            <header>
+                <div class="logo"><img src="img/logo.jpg" alt="logo"></div>
+                <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
+                <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
+            </header>
+            <section>
+                <div class="body-login">
+                    <h3><strong>Admin Login Page</strong></h3><br>
+                    <form name='form1' method='post' action='checkadmin.php'>
+                    <label for="psd">รหัสผ่าน :</label>
+                    <input type='password' id='psd' name='psd'>
+                    <input type='submit' name='button' value='Login'></td>
+                </div>
+            </section>
+            <footer>
+               <p>&copy; Copyright by Computer Center Lerdsin Hospital.</p> 
+            </footer>
+        </div>
+        <?php
+        }else{
+            if($ses_diff_time > $ses_limit_time){
+                session_destroy();
+                echo "<meta http-equiv='refresh' content='1;url=bin.php'>";
+                ?>
+            <?php
+            }else{?>
 <div class="container">
     <header>
         <div class="logo"><img src="img/logo.jpg" alt=""></div>
@@ -64,36 +107,31 @@
         <p>&copy; Copyright by Computer Center Lerdsin Hospital.</p> 
     </footer>
 </div>
-                    <?php
-                    } else 
-	                {
-                    ?>
-<div class="container">
-    <header>
-        <div class="logo"><img src="img/logo.jpg" alt=""></div>
-        <div class="title"><h2>แบบฟอร์มแจ้งปัญหาหรือความต้องการให้ผู้เกี่ยวข้องดำเนินการ</h2></div> 
-        <div class="berger"><h1><i class='fa fa-bars'></i></h1></div>
-    </header>
-    <section>
-        <div class="body-login">
-            <h3><strong>Admin Login Page</strong></h3><br>
-            <form name='form1' method='post' action='checkuser.php'>
-            <label for="psd">รหัสผ่าน :</label>
-            <input type='password' id='psd' name='psd'>
-            <input type='submit' name='button' value='Login'></td>
-        </div>
-    </section>
-    <footer>
-       <p>&copy; Copyright by Computer Center Lerdsin Hospital.</p> 
-    </footer>
-</div>
+            <?php
+            }
 
+        }
+    ?>
+<script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 
-
-
-        <?php } ?>
-
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 </body>
 </html>

@@ -14,7 +14,8 @@ error_reporting(0);
 </head>
 <body>
 <?php
-setcookie("request_form", FALSE);
+// setcookie("request_form", FALSE);
+session_destroy();
 echo "<meta http-equiv='refresh'  content='2;URL=index.php'>";
 ?>
 <script>

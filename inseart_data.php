@@ -15,6 +15,7 @@ $department = $_POST['department'];
 $tel = $_POST['tel'];
 $detail = $_POST['detail'];
 $name = $_POST['name'];
+$passcode = $_POST['passcode'];
 $way = $_POST['way'];
 $specify = $_POST['specify'];
 $date_time= date("dmYhi");
@@ -23,14 +24,21 @@ $ipaddress = $_SERVER['REMOTE_ADDR'];
 
 
 
-if(($_POST['date']=="")||($_POST['case']=="")||($_POST['department']=="")||($_POST['tel']=="")||($_POST['detail']=="")||($_POST['name']=="")){
+if(($_POST['date']=="")||($_POST['case']=="")||($_POST['department']=="")||($_POST['tel']=="")||($_POST['detail']=="")||($_POST['name']=="")||($_POST['passcode']=="")){
 	echo "กรุณากรอกข้อมูลตามเครื่องหมายดอกจันสีแดง "."<font color='red'>*</font>"."ให้ครบถ้วน";
-	echo "<br><br><br><input type='button' value='กลับไปตรวจสอบ'  onclick='history.back();' /></h2></div>";
+	echo "<br><br><br><input type='button' value='Back'  onclick='history.back();'  style='padding:15px; background-color:salmon; color:white;'/></h2></div>";
 exit();
 }
 
+if(!ereg("([0-9]{4})",$_POST['passcode'])){
+	
+	echo "<br><br><center><h2 style='color:gray;'>กรุณาใส่ข้อมูล PassCode เป็นตัวเลข 4 หลัก</h2></center>";
+	echo "<br><br><center><input type='button' value='Back'  onclick='history.back();'  style='padding:15px; background-color:salmon;text-align:center;border:none;width:150px; color:white;border-radius:5px;'/></center>";
+	exit();
+}
+
 include("connect.inc.php");
-		$sql="INSERT INTO `request_form` (`id`,`date`,`case`,`department`,`tel`,`detail`,`name`,`way`,`specify`,`date_time`,`status`,`ipaddress`)VALUES (NULL , '$date', '$case', '$department', '$tel', '$detail', '$name', '$way', '$specify', '$date_time', '$status', '$ipaddress');";
+		$sql="INSERT INTO `request_form` (`id`,`date`,`case`,`department`,`tel`,`detail`,`name`,`passcode`,`way`,`specify`,`date_time`,`status`,`ipaddress`)VALUES (NULL , '$date', '$case', '$department', '$tel', '$detail', '$name', '$passcode', '$way', '$specify', '$date_time', '$status', '$ipaddress');";
 			mysql_query($sql) or die ("ไม่สามารถเพิ่มข้อมูลได้");
 			echo "<div align='center'>";
 			?><script>
